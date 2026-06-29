@@ -12,36 +12,36 @@ Bell Test: calculation of the the S parameter and its uncertainty using coincide
 
 ## File Description
 ### File: QT_and_Bell_Test.py
-* __Input__: 
- * Part A: path to the directory specified by 'PART_A_DIR' with MP4 video files named '10bits.mp4', '25bits.mp4', '50bits.mp4' 
- * Part B: path to the directory specified by 'PART_B_DIR' MP4 video files named '{alpha}to{beta}.mp4' (for example: '0to22.5.mp4')
-   * _Note_: Part B video files must follow the naming convention `{alpha}to{beta}.mp4` 
-   where alpha and beta are the polarizer angles in degrees (e.g. `-45to22.5.mp4`). 
-   Negative angles and decimal values are supported.
+* __Inputs__: 
+   * Part A: path to the directory specified by 'PART_A_DIR' with MP4 video files named '10bits.mp4', '25bits.mp4', '50bits.mp4' 
+   * Part B: path to the directory specified by 'PART_B_DIR' MP4 video files named '{alpha}to{beta}.mp4' (for example: '0to22.5.mp4')
+     * _Note_: Part B video files must follow the naming convention `{alpha}to{beta}.mp4` 
+     where alpha and beta are the polarizer angles in degrees (e.g. `-45to22.5.mp4`). 
+     Negative angles and decimal values are supported.
 *__Control Parameters__:
- * selection of the desired analysis stage (Part A, Part B, Simulation)
- * selection of signal and video analysis parameters (shown below in 'How to Run' section)
+   * selection of the desired analysis stage (Part A, Part B, Simulation)
+   * selection of signal and video analysis parameters (shown below in 'How to Run' section)
 *__Analysis__:
- * the code reads MP4 video files, 
- * extracts per-frame red-channel intensity inside user-defined regions of interest, 
- * detects laser pulse events by detecting signals that surpass a user-defined threshold
+   * the code reads MP4 video files, 
+   * extracts per-frame red-channel intensity inside user-defined regions of interest, 
+   * detects laser pulse events by detecting signals that surpass a user-defined threshold
 * __Quantum Tomography__:
-  * Counts coincidences between Alice and Bob and calculates normalized intensity
-Reconstructs and plots the two Bell's states' density matrices, both for measured data and simulated pulses.
+    * Counts coincidences between Alice and Bob and calculates normalized intensity
+  Reconstructs and plots the two Bell's states' density matrices, both for measured data and simulated pulses.
 * __Bell Test__:
-  * computes the CHSH correlation parameter S with its statistical uncertainty.
+    * computes the CHSH correlation parameter S with its statistical uncertainty.
 * __Outputs__:
- * _'PartA_density_matrices.png'_ - 3D plot bar charts of the 
-   reconstructed density matrices |ρᵢⱼ| for both |Φ⁺⟩ and |Ψ⁺⟩ states, 
-   at each pulse count (10, 25, 50 bits). Corresponds to Fig. () in the paper.
- * _'PartB_clean_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
-   traces for all 16 angle combinations, with the  specific pair of angles as the title of each subplot. Corresponds to Fig. () in the paper.
- * _'PartA_simulation_verification.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. () in the paper.
- - _Console output prints_ including:
-   - the two Bell's states density matrices, both for measured data and simulated pulses.
-   - E(α,β) values.
-   - S ± error.
-   - per-video coincidence counts.
+   * _'PartA_density_matrices.png'_ - 3D plot bar charts of the 
+     reconstructed density matrices |ρᵢⱼ| for both |Φ⁺⟩ and |Ψ⁺⟩ states, 
+     at each pulse count (10, 25, 50 bits). Corresponds to Fig. () in the paper.
+   * _'PartB_clean_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
+     traces for all 16 angle combinations, with the  specific pair of angles as the title of each subplot. Corresponds to Fig. () in the paper.
+   * _'PartA_simulation_verification.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. () in the paper.
+   - _Console output prints_ including:
+     - the two Bell's states density matrices, both for measured data and simulated pulses.
+     - E(α,β) values.
+     - S ± error.
+     - per-video coincidence counts.
 ## How to Run
 ### Step 1: define the paths
 __define the paths for the directories with the data__
