@@ -1,46 +1,47 @@
 # Quantum Tomography and Bell Test
 A Python analysis code for processing pulsed laser video recording for the experiment of "Quantum Tomography And Bell Test".
-In the experiment, a series of laser pulses with different polariztion were recorded via two detection arms (Alice and Bob), each equipped 
+In the experiment, a series of laser pulses with different polarization were recorded via two detection arms (Alice and Bob), each equipped 
 with a polarizing beam splitter and camera-based detectors. The analysis code reads the recorded videos, find coincident events, 
 reconstructs the density matrix of the emulated Bell state, and tests the CHSH Bell inequality. 
 
 Quantum Tomography: 
 1. reconstruction and plotting of density matrices via quantum state tomography from the measured data
-2. reconstruction and plotting of density matrices via quantum state tomography from the simulated data, providing check of the analysis code.
+2. reconstruction and plotting of density matrices via quantum state tomography from the simulated data, providing a check of the analysis code.
 
-Bell Test: calculation of the the S parameter and it's uncertainty using coincidence measurements and Possion statistics.
+Bell Test: calculation of the the S parameter and its uncertainty using coincidence measurements and Poisson statistics.
 
 ## File Description
-### __Input__: 
-* Part A: path to the directory specified by 'PART_A_DIR' with MP4 video files named '10bits.mp4', '25bits.mp4', '50bits.mp4' 
-* Part B: path to the directory specified by 'PART_B_DIR' MP4 video files named '{alpha}to{beta}.mp4' (for example: '0to22.5.mp4')
-  * _Note_: Part B video files must follow the naming convention `{alpha}to{beta}.mp4` 
-  where alpha and beta are the polarizer angles in degrees (e.g. `-45to22.5.mp4`). 
-  Negative angles and decimal values are supported.
-### __Control Parameters__:
-* selection of the desired analysis stage (Part A, Part B, Simulation)
-* selection of signal and video analysis parameters (shown below in 'How to Run' section)
-### __Analysis__:
-* the code reads MP4 video files, 
-* extracts per-frame red-channel intensity inside user-defined regions of interest, 
-* detects laser pulse events by detecting signals that surpass a user-defined threshold
+### File: QT_and_Bell_Test.py
+* __Input__: 
+ * Part A: path to the directory specified by 'PART_A_DIR' with MP4 video files named '10bits.mp4', '25bits.mp4', '50bits.mp4' 
+ * Part B: path to the directory specified by 'PART_B_DIR' MP4 video files named '{alpha}to{beta}.mp4' (for example: '0to22.5.mp4')
+   * _Note_: Part B video files must follow the naming convention `{alpha}to{beta}.mp4` 
+   where alpha and beta are the polarizer angles in degrees (e.g. `-45to22.5.mp4`). 
+   Negative angles and decimal values are supported.
+*__Control Parameters__:
+ * selection of the desired analysis stage (Part A, Part B, Simulation)
+ * selection of signal and video analysis parameters (shown below in 'How to Run' section)
+*__Analysis__:
+ * the code reads MP4 video files, 
+ * extracts per-frame red-channel intensity inside user-defined regions of interest, 
+ * detects laser pulse events by detecting signals that surpass a user-defined threshold
 * __Quantum Tomography__:
-  * counts coincedents between Alice and Bob and claculate normalized intensity
-reconstruct and plot the two Bell's states density matrices, both for measured data and simulated pulses.
+  * Counts coincidences between Alice and Bob and calculates normalized intensity
+Reconstructs and plots the two Bell's states' density matrices, both for measured data and simulated pulses.
 * __Bell Test__:
   * computes the CHSH correlation parameter S with its statistical uncertainty.
-### __Outputs__:
-* _'PartA_density_matrices.png'_ - 3D plot bar charts of the 
-  reconstructed density matrices |ρᵢⱼ| for both |Φ⁺⟩ and |Ψ⁺⟩ states, 
-  at each pulse count (10, 25, 50 bits). Corresponds to Fig. () in the paper.
-* _'PartB_clean_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
-  traces for all 16 angle combinations, whith the spesific pair of angles as the title of each subplot. Corresponds to Fig. () in the paper.
-* _'PartA_simulation_verification.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. () in the paper.
-- _Console output prints_ including:
-  - the two Bell's states density matrices, both for measured data and simulated pulses.
-  - E(α,β) values.
-  - S ± error.
-  - per-video coincidence counts.
+* __Outputs__:
+ * _'PartA_density_matrices.png'_ - 3D plot bar charts of the 
+   reconstructed density matrices |ρᵢⱼ| for both |Φ⁺⟩ and |Ψ⁺⟩ states, 
+   at each pulse count (10, 25, 50 bits). Corresponds to Fig. () in the paper.
+ * _'PartB_clean_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
+   traces for all 16 angle combinations, with the  specific pair of angles as the title of each subplot. Corresponds to Fig. () in the paper.
+ * _'PartA_simulation_verification.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. () in the paper.
+ - _Console output prints_ including:
+   - the two Bell's states density matrices, both for measured data and simulated pulses.
+   - E(α,β) values.
+   - S ± error.
+   - per-video coincidence counts.
 ## How to Run
 ### Step 1: define the paths
 __define the paths for the directories with the data__
@@ -79,5 +80,5 @@ __define the simulation parameters.__
 ### Step 4: Run
 On the first run, an interactive window will open for drawing 
 rectangles around each detector's laser spot on the camera frame. 
-Draw according to the part of the analysis your'e working on (4 rectangles for Part A and 2 for Part B). 
+Draw according to the part of the analysis you're working on (4 rectangles for Part A and 2 for Part B). 
 These coordinates are saved automatically for each part and can be reused for future runs.
