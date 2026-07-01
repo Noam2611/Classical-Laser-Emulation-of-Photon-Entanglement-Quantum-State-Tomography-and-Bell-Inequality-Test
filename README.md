@@ -18,15 +18,14 @@ Bell Test: calculation of the the S parameter and its uncertainty using coincide
      * _Note_: Part B video files must follow the naming convention `{alpha}to{beta}.mp4` 
      where alpha and beta are the polarizer angles in degrees (e.g. `-45to22.5.mp4`). 
      Negative angles and decimal values are supported.
+* __Control Parameters__:
+  * selection of the desired analysis stage (Part A, Part B, Simulation)
+  * selection of signal and video analysis parameters (shown below in 'How to Run' section)
 
-*__Control Parameters__:
-   * selection of the desired analysis stage (Part A, Part B, Simulation)
-   * selection of signal and video analysis parameters (shown below in 'How to Run' section)
-
-*__Analysis__:
-   * the code reads MP4 video files, 
-   * extracts per-frame red-channel intensity inside user-defined regions of interest, 
-   * detects laser pulse events by detecting signals that surpass a user-defined threshold
+* __Analysis__:
+    * the code reads MP4 video files, 
+    * extracts per-frame red-channel intensity inside user-defined regions of interest, 
+    * detects laser pulse events by detecting signals that surpass a user-defined threshold
 
 * __Quantum Tomography__:
     * Counts coincidences between Alice and Bob and calculates normalized intensity
@@ -82,6 +81,9 @@ __define the simulation parameters.__
 | 'SIM_A_SEED' | 1 | random seed for reproducibility. |
 
 ### Step 4: Run
+```bash
+python QT_and_Bell_Test.py
+```
 On the first run, an interactive window will open for drawing 
 rectangles around each detector's laser spot on the camera frame. 
 Draw according to the part of the analysis you're working on (4 rectangles for Part A and 2 for Part B). 
