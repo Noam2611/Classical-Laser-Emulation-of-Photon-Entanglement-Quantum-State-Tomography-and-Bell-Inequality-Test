@@ -1,4 +1,4 @@
-# Quantum Tomography and Bell Test
+# Classical Laser Emulation of Photon Entanglement: Quantum State Tomography and Bell Inequality Test
 A Python analysis code for processing pulsed laser video recording for the experiment of "Quantum Tomography And Bell Test".
 In the experiment, a series of laser pulses with different polarization were recorded via two detection arms (Alice and Bob), each equipped 
 with a polarizing beam splitter and camera-based detectors. The analysis code reads the recorded videos, find coincident events, 
