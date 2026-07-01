@@ -31,12 +31,12 @@ Bell Test: calculation of the the S parameter and its uncertainty using coincide
 * __Bell Test__:
     * computes the CHSH correlation parameter S with its statistical uncertainty.
 * __Outputs__:
-   * _'PartA_density_matrices.png'_ - 3D plot bar charts of the 
+   * _'PartA_QT_density.png'_ - 3D plot bar charts of the 
      reconstructed density matrices |ρᵢⱼ| for both |Φ⁺⟩ and |Ψ⁺⟩ states, 
-     at each pulse count (10, 25, 50 bits). Corresponds to Fig. () in the paper.
-   * _'PartB_clean_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
-     traces for all 16 angle combinations, with the  specific pair of angles as the title of each subplot. Corresponds to Fig. () in the paper.
-   * _'PartA_simulation_verification.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. () in the paper.
+     at each pulse count (10, 25, 50 bits). Corresponds to Fig. (3) in the paper.
+   * _'PartB_QT_grid.png'_ - 4x4 grid of normalized Alice/Bob intensity 
+     traces for all 16 angle combinations, with the  specific pair of angles as the title of each subplot. Corresponds to Fig. (5) in the paper.
+   * _'PartA_simulation_verification_50.png'_ - a plot comparing the ideal and reconstructed density matrices from the simulation corresponds to Fig. (4) in the paper.
    - _Console output prints_ including:
      - the two Bell's states density matrices, both for measured data and simulated pulses.
      - E(α,β) values.
